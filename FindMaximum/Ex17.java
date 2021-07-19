@@ -1,7 +1,8 @@
-
+// 구조체 생성
 class coin{
 	int name;
 	int weight;
+	// 매게 변수가 있는 생성자
 	coin(int i, int j){
 		this.name= i;
 		this.weight=j;
@@ -14,18 +15,13 @@ public class Ex17 {
 		coin c[]=new coin[7];
 		for(int i=0;i<c.length;i++)
 			c[i]=new coin(i+1, 10);
-		c[5].weight=9;
-//		for(int i=0;i<c.length;i++)
-//		{
-//			c[i]=new coin(i+2,10);
-//		}
-
+		c[6].weight=9;
 		int result=searchCoin(c);
 		System.out.println("가짜 동전은 "+c[result].name);
 		
 	}
 	public static int searchCoin(coin[] c) {
-		String l="왼쪽으로 기울었다.";	//왼쪽>오른쪽
+		String l="왼쪽으로 기울었다.";	//왼쪽<오른쪽
 		String r="오른쪽으로 기울었다.";
 		String a="양팔 저울 결과 ";
 		for(int i=0;i<5;i+=2)
@@ -43,7 +39,7 @@ public class Ex17 {
 			else 
 				System.out.println(a+"둘 다 같다.");
 		}
-		return c.length;
+		return (c.length-1);
 	}
 
 }
